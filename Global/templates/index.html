@@ -35,7 +35,7 @@
         <nav class="auth google">
             <i class="fab fa-google"></i>
             <div class="option">
-                <div>Hola {{ user.username }} bienvenido a casa!</div>
+                <div>Hola {{ user.first_name }} bienvenido a casa!</div>
                 <a href="{% url 'logout' %}" class="logout">Cerrar sesión</a>
             </div>
         </nav>
