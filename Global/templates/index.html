@@ -15,8 +15,9 @@
 <body>
     <header>
         {% for auth in backends.associated %}
-        {% if auth.provider == 'github' %}
-        <nav class=" auth facebook">
+        {% if user.username == auth.user.username %}
+        {% if auth.provider == 'facebook' %}
+        <nav class="auth facebook">
             <i class="fab fa-facebook"></i>
             <div class="option">
                 <div>Hola {{ user.username }} bienvenido a casa!</div>
@@ -24,7 +25,7 @@
             </div>
         </nav>
         {% elif auth.provider == 'github' %}
-        <nav class=" auth github">
+        <nav class="auth github">
             <i class="fab fa-github"></i>
             <div class="option">
                 <div>Hola {{ user.username }} bienvenido a casa!</div>
@@ -32,7 +33,7 @@
             </div>
         </nav>
         {% elif auth.provider == 'google-oauth2' %}
-        <nav class=" auth google">
+        <nav class="auth google">
             <i class="fab fa-google"></i>
             <div class="option">
                 <div>Hola {{ user.username }} bienvenido a casa!</div>
@@ -40,7 +41,7 @@
             </div>
         </nav>
         {% endif %}
-
+        {% endif %}
         {% endfor %}
     </header>
 </body>
