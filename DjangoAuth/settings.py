@@ -67,12 +67,12 @@ TEMPLATES = [
 LOGIN_URL = "login"
 LOGOUT_URL = "logout"
 LOGIN_REDIRECT_URL = "index"
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
 AUTHENTICATION_BACKENDS = (
     "social_core.backends.github.GithubOAuth2",
     "social_core.backends.facebook.FacebookOAuth2",
     'social_core.backends.google.GoogleOAuth2',
-    'social_core.backends.google.GoogleOAuth',
     "django.contrib.auth.backends.ModelBackend",
 )
 
@@ -95,8 +95,8 @@ SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [
 
 # -- Google
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.getenv("SOCIAL_AUTH_GOOGLE_OAUTH2_KEY")
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv("SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET")
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.getenv("ID_USER_GOOGLE")
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv("SECRET_KEY_GOOGLE")
 
 WSGI_APPLICATION = "DjangoAuth.wsgi.application"
 
