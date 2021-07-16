@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "Global",
     "social_django",  # <- social
+    
 ]
 
 MIDDLEWARE = [
@@ -70,6 +71,8 @@ LOGIN_REDIRECT_URL = "index"
 AUTHENTICATION_BACKENDS = (
     "social_core.backends.github.GithubOAuth2",
     "social_core.backends.facebook.FacebookOAuth2",
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.google.GoogleOAuth',
     "django.contrib.auth.backends.ModelBackend",
 )
 
@@ -89,6 +92,11 @@ SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [
     ("picture", "picture"),
     ("link", "profile_url"),
 ]
+
+# -- Google
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.getenv("SOCIAL_AUTH_GOOGLE_OAUTH2_KEY")
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv("SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET")
 
 WSGI_APPLICATION = "DjangoAuth.wsgi.application"
 

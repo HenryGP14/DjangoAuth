@@ -20,6 +20,7 @@ from Global import views as views_global
 from django.contrib.auth import views as auth_views
 
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path("", views_global.vwHome, name="index"),
