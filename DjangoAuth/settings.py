@@ -74,6 +74,7 @@ AUTHENTICATION_BACKENDS = (
     "social_core.backends.facebook.FacebookOAuth2",
     "social_core.backends.google.GoogleOAuth2",
     "social_core.backends.yahoo.YahooOAuth2",
+    "social_core.backends.linkedin.LinkedinOAuth2",
     "django.contrib.auth.backends.ModelBackend",
 )
 
@@ -101,6 +102,11 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv("SECRET_KEY_GOOGLE")
 # -- YAHOO
 SOCIAL_AUTH_YAHOO_OAUTH2_KEY = os.getenv("CLIENT_ID_YAHOO")
 SOCIAL_AUTH_YAHOO_OAUTH2_SECRET = os.getenv("CLIENT_SECRET_YAHOO")
+
+# -- LinkedIn
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = os.getenv("ID_USER_LINKEDIN")
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = os.getenv("SECRET_KEY_LINKEDIN")
+
 
 WSGI_APPLICATION = "DjangoAuth.wsgi.application"
 
