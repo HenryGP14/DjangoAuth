@@ -2,4 +2,3 @@ psycopg2==2.8.6
 django-environ
 python-dotenv
 social-auth-app-django
-django-allauth

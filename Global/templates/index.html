@@ -39,6 +39,14 @@
                 <a href="{% url 'logout' %}" class="logout">Cerrar sesión</a>
             </div>
         </nav>
+        {% elif auth.provider == 'yahoo-oauth2' %}
+        <nav class="auth google">
+            <i class="fab fa-yahoo"></i>
+            <div class="option">
+                <div>Hola {{ user.username }} bienvenido a casa!</div>
+                <a href="{% url 'logout' %}" class="logout">Cerrar sesión</a>
+            </div>
+        </nav>
         {% endif %}
         {{ break }}
         {% endfor %}
