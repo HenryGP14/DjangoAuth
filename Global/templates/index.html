@@ -15,7 +15,6 @@
 <body>
     <header>
         {% for auth in backends.associated %}
-        {% if user.username == auth.user.username %}
         {% if auth.provider == 'facebook' %}
         <nav class="auth facebook">
             <i class="fab fa-facebook"></i>
@@ -41,7 +40,7 @@
             </div>
         </nav>
         {% endif %}
-        {% endif %}
+        {{ break }}
         {% endfor %}
     </header>
 </body>
